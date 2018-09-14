@@ -1,11 +1,5 @@
 "auto";
 //脚本执行完成时间40秒
-//设置脚本坐标点击的位置自动缩放坐标
-//setScreenMetrics(1080, 1920);
-//如果屏幕亮着就执行
-//if (device.isScreenOn()) {
-//如果屏幕没有点亮则唤醒设备
-//device.wakeUpIfNeeded();
 sleep(100);
 //向上滑动
 //swipe(500, 1000, 500, 50, 200);
@@ -117,8 +111,8 @@ switch (hours) {
 sleep(10000);
 
 //点击打卡后的我知道了按钮
-//click(751, 1520);
-//sleep(1000);
+click(751, 1520);
+sleep(1000);
 
 //打卡完毕后截屏发QQ（三指下拉的方式截屏）
 gestures([350, [300, 0],
@@ -134,33 +128,28 @@ click(910, 280);
 sleep(1000);
 click("发送");
 sleep(1000);
-click("QQ");
+click("微信");
 sleep(1000);
-//发给答案
-id("text1").className("android.widget.TextView").text("答案5927796").findOne().parent().click();
-//确定
-id("dialogRightBtn").findOne().click();
+//设置搜索内容
+id("aud").findOne().setText("15031727213");
 sleep(1000);
-//发送QQ消息
-input(content);
+//点击第一个搜索结果
+click(540,532);
+sleep(1000);
+//点击文本框
+id("ank").findOne().click();
+sleep(1000);
+//设置文本框内容
+setText(content);
 sleep(1000);
 //点击发送
-id("fun_btn").findOne().click();
+id("anb").findOne().click();
+sleep(1000);
+//点击回到微信
+id("anb").findOne().click();
+sleep(1000);
 //后退后退回到桌面
-sleep(500);
-Back();
-sleep(100);
-Back();
-sleep(100);
 Home();
-sleep(100);
-Home();
-sleep(100);
+sleep(1000);
 Power();
-//}
-//else {
-//    var tipstext = "该打卡了";
-//    dialogs.alert(tipstext);
-//    toast(tipstext);
-//}
 exit();
